@@ -1,9 +1,9 @@
 """ This finds prime factors """
-def prime_fac():
-    number = input("Type a number greater than 1: ")
+def prime_fac(number):
+    # number = input("Type a number greater than 1: ")
     num_list = []
     if (number <= 1 or type(number) != int):
-        print "Please try again..."
+        print "Please try again...Type a number greater than 1."
         print 
         prime_fac()
     else:
