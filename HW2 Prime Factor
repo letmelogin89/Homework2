@@ -5,6 +5,7 @@ def prime_fac():
     if (number <= 1 or type(number) != int):
         print "Please try again..."
         print 
+        prime_fac()
     else:
         while(number > 0):
             if (number == 1):
@@ -28,4 +29,3 @@ def prime_fac():
                 num_list.sort()
                 print "Factors : " + str(num_list)
                 break
-    prime_fac() 
