@@ -1,3 +1,44 @@
+"""Math 480, Daae Oh, HW2, Prime Factorization"""
+
+""" This function takes the number that's greater than 1 and
+    it finds prime factors """
+def prime_fac(number):
+    # number = input("Type a number greater than 1: ")
+    num_list = []
+    factor = 11
+    if (number <= 1 or type(number) != int):
+        print "Please try again...Type a number greater than 1."
+        print
+
+    else:
+        while(number > 0):
+            if (number == 1):
+                num_list.sort()
+                print str(num_list) + " 1"
+                return num_list
+            elif(number % 2 == 0):
+                number = number/2
+                num_list.append(2)
+            elif (number % 3 == 0):
+                number = number/3
+                num_list.append(3)
+            elif (number % 5 == 0):
+                number = number/5
+                num_list.append(5)
+            elif (number % 7 == 0):
+                number = number/7
+                num_list.append(7)
+            else:
+                next_prime = get_prime(factor, number)
+                number = number/next_prime
+                num_list.append(next_prime)
+            print number
+
+#This takes lastest factor and search for next prime number
+def get_prime(current,num):
+    for i in range(current,num + 1,2): #inclusive
+        if (num % i == 0):
+            return i
 """ This finds prime factors """
 def prime_fac(number):
     # number = input("Type a number greater than 1: ")
