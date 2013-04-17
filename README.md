@@ -1,6 +1,6 @@
 Homework2
 =========
 
-Factoring an integer that's smaller than 100.
+Takes a number greater than 1 and finds the prime factors.
 
-Examples:
+Examples: 
