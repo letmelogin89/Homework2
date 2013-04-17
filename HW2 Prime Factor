@@ -9,13 +9,12 @@ def prime_fac(number):
     if (number <= 1 or type(number) != int):
         print "Please try again...Type a number greater than 1."
         print
-
     else:
         while(number > 0):
             if (number == 1):
                 num_list.sort()
-                print str(num_list) + " 1"
-                return num_list
+                print "Prime factors are: " + str(num_list)
+                break
             elif(number % 2 == 0):
                 number = number/2
                 num_list.append(2)
@@ -32,7 +31,6 @@ def prime_fac(number):
                 next_prime = get_prime(factor, number)
                 number = number/next_prime
                 num_list.append(next_prime)
-            print number
 
 #This takes lastest factor and search for next prime number
 def get_prime(current,num):
