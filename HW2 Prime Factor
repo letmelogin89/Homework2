@@ -39,34 +39,3 @@ def get_prime(current,num):
     for i in range(current,num + 1,2): #inclusive
         if (num % i == 0):
             return i
-""" This finds prime factors """
-def prime_fac(number):
-    # number = input("Type a number greater than 1: ")
-    num_list = []
-    if (number <= 1 or type(number) != int):
-        print "Please try again...Type a number greater than 1."
-        print 
-        prime_fac()
-    else:
-        while(number > 0):
-            if (number == 1):
-                num_list.sort()
-                print "Factors : " + str(num_list)
-                break
-            elif(number % 2 == 0):
-                number = number/2
-                num_list.append(2)          
-            elif (number % 3 == 0):
-                number = number/3
-                num_list.append(3)
-            elif (number % 5 == 0):
-                number = number/5
-                num_list.append(5)
-            elif (number % 7 == 0):
-                number = number/7
-                num_list.append(7)
-            elif (number/number == 1):
-                num_list.append(number)
-                num_list.sort()
-                print "Factors : " + str(num_list)
-                break
