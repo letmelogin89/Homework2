@@ -1,0 +1,40 @@
+%cython
+cpdef prime_fac_c(int number):
+    # number = input("Type a number greater than 1: ")
+    num_list = []
+    cdef int factor = 11
+    if (number <= 1 or type(number) != int):
+        print "Please try again...Type a number greater than 1."
+        print
+    else:
+        while(number > 0):
+            if (number == 1):
+                num_list.sort()
+                print "Prime factors are: " + str(num_list)
+                break
+            elif(number % 2 == 0):
+                number = number/2
+                num_list.append(2)
+            elif (number % 3 == 0):
+                number = number/3
+                num_list.append(3)
+            elif (number % 5 == 0):
+                number = number/5
+                num_list.append(5)
+            elif (number % 7 == 0):
+                number = number/7
+                num_list.append(7)
+            else:
+                next_prime = get_prime_c(factor, number)
+                factor = next_prime
+                #print str(factor) + "is next_prime"
+                number = number/next_prime
+                num_list.append(next_prime)
+
+#This takes lastest factor and search for next prime number
+cdef int get_prime_c(int current,int num):
+    for i in range(current,num + 1,2): #inclusive
+        if (num % i == 0):
+            return i
+
+%timeit prime_fac_c(12131988)
