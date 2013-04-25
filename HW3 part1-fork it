@@ -38,4 +38,4 @@ cdef int get_prime_c(int current,int num):
             return i
 
 %timeit prime_fac_c(12131988)
-#result: 25 loops, best of 3: 14.2 ms per loop
+#result: 25 loops, best of 3: 13.7 ms per loop
